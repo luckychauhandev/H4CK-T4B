@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>H4CK-T4B // OPS CONSOLE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <header class="logo-row">
+        <span class="logo-text">&gt;_ H4CK-T4B // OPS CONSOLE</span>
+        <span class="status-dot"></span>
+      </header>
+
+      <main class="main">
+        <!-- search bar -->
+        <section class="search-section">
+          <div class="search-wrapper">
+            <select id="engineSelect" class="engine-select">
+              <option value="https://www.google.com/search?q=">Google</option>
+              <option value="https://www.bing.com/search?q=">Bing</option>
+              <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+              <option value="https://search.yahoo.com/search?p=">Yahoo</option>
+            </select>
+
+            <input
+              id="searchInput"
+              class="search-input"
+              type="text"
+              placeholder="scan the grid..."
+              autofocus
+            />
+
+            <button id="searchBtn" class="search-btn">EXECUTE</button>
+          </div>
+
+          <div id="scanOverlay" class="scan-overlay hidden">
+            <div class="scan-lines"></div>
+            <div class="scan-text">running query trace... stand by</div>
+          </div>
+        </section>
+
+        <!-- boards -->
+        <section class="grid">
+          <div class="panel">
+            <h2>Active Operations</h2>
+
+            <ul id="todoList" class="todo-list"></ul>
+
+            <form id="todoForm" class="todo-form">
+              <input
+                id="todoTitle"
+                type="text"
+                placeholder="task: breach target..."
+                required
+              />
+              <input
+                id="todoUrl"
+                type="url"
+                placeholder="optional: https://target-node"
+              />
+              <button type="submit">queue</button>
+            </form>
+          </div>
+
+          <div class="panel">
+            <h2>Quick Access Nodes</h2>
+            <ul id="linksList" class="links-list"></ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>session: <span id="time"></span></span>
+      </footer>
+    </div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
